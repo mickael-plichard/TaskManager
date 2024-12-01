@@ -1,6 +1,14 @@
-/* CSS pour les tâches complètes */
-li.completed {
+
+li {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  }
+
+  li.completed {
     text-decoration: line-through;
     background-color: #e0e0e0;
   }
   
+  li.delete {
+    transform: scale(0);
+    opacity: 0;
+  }

@@ -70,3 +70,13 @@ function toggleCompletion(index) {
     }
   });
   
+// Animation for deletion
+function deleteTask(index) {
+    const li = document.querySelector(`[data-index="${index}"]`);
+    li.classList.add('delete'); // Appliquer l'animation avant de supprimer
+    setTimeout(() => {
+      tasks.splice(index, 1);
+      saveTasks();
+      displayTasks();
+    }, 300); // Delay
+  }
