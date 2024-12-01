@@ -9,7 +9,7 @@ Développer une application web de gestion des tâches en utilisant uniquement d
 Application réalisée lors de mon apprentissage du Javascript, me permettant de travailler sur les points suivants:
 - La manipulation du DOM avec JavaScript.
 - L'utilisation du `localStorage` pour la persistance des données.
-- L'implémentation de fonctionnalités interactives telles que le drag & drop, les transitions CSS et les événements utilisateur.
+- L'implémentation de fonctionnalités interactives (transitions CSS et événements).
 
 ---
 
