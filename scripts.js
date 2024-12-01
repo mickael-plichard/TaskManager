@@ -2,6 +2,7 @@
 const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task-input');
 const taskDate = document.getElementById('task-date');
+const taskList = document.getElementById('task-list');
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
@@ -24,3 +25,20 @@ function saveTasks() {
 }
 
 
+// View tasks function
+function displayTasks() {
+    taskList.innerHTML = ''; // Réinitialiser la liste avant chaque affichage
+    tasks.forEach((task, index) => {
+      const li = document.createElement('li');
+      li.setAttribute('data-index', index);
+      li.innerHTML = `
+        <span>${task.text} - ${task.date}</span>
+        <button class="delete-btn" onclick="deleteTask(${index})">×</button>
+      `;
+      taskList.appendChild(li);
+    });
+  }
+  
+  // Afficher les tâches au chargement de la page
+  document.addEventListener('DOMContentLoaded', displayTasks);
+  
