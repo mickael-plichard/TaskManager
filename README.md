@@ -22,12 +22,7 @@ Application réalisée lors de mon apprentissage du Javascript, me permettant de
 
 ### **2. Fonctionnalités d'interaction**
 - **Marquer une tâche comme complétée** : Les tâches peuvent être marquées comme terminées, avec un style visuel distinct.
-- **Réorganiser les tâches** : Implémentation d'un système de drag & drop pour réorganiser la liste des tâches.
 - **Effets visuels** : Animation lors de l'ajout et la suppression des tâches.
-
-### **3. Interface utilisateur**
-- **Mode clair/sombre** : L'utilisateur peut basculer entre un mode clair et un mode sombre pour une meilleure expérience visuelle.
-- **Responsive Design** : Interface adaptée aux écrans mobiles, tablettes et ordinateurs.
 
 ---
 
@@ -43,9 +38,3 @@ Application réalisée lors de mon apprentissage du Javascript, me permettant de
 
 **Supprimer une tâche:**
 - Cliquez sur le bouton "×" à droite de la tâche pour la supprimer.
-
-**Réorganiser les tâches:**
-- Cliquez et faites glisser une tâche pour la déplacer dans la liste.
-
-**Basculer entre les modes clair et sombre:**
-- Cliquez sur l’icône en haut à droite pour changer le thème.

@@ -1,4 +1,4 @@
-// Add a task
+
 const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task-input');
 const taskDate = document.getElementById('task-date');
@@ -6,6 +6,7 @@ const taskList = document.getElementById('task-list');
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
+// Add a task
 taskForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const task = {
@@ -20,14 +21,15 @@ taskForm.addEventListener('submit', (event) => {
   taskDate.value = '';
 });
 
+// Save a task into localStorage
 function saveTasks() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 
-// View tasks function
+// View all tasks
 function displayTasks() {
-    taskList.innerHTML = ''; // Réinitialiser la liste avant chaque affichage
+    taskList.innerHTML = ''; // Reset before display
     tasks.forEach((task, index) => {
       const li = document.createElement('li');
       li.setAttribute('data-index', index);
@@ -45,7 +47,7 @@ function displayTasks() {
     });
   }
   
-  // Afficher les tâches au chargement de la page
+  // Display task
   document.addEventListener('DOMContentLoaded', displayTasks);
   
 // Delete task
@@ -73,10 +75,10 @@ function toggleCompletion(index) {
 // Animation for deletion
 function deleteTask(index) {
     const li = document.querySelector(`[data-index="${index}"]`);
-    li.classList.add('delete'); // Appliquer l'animation avant de supprimer
+    li.classList.add('delete');
     setTimeout(() => {
       tasks.splice(index, 1);
       saveTasks();
       displayTasks();
-    }, 300); // Delay
+    }, 300);
   }
