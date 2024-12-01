@@ -42,3 +42,10 @@ function displayTasks() {
   // Afficher les tâches au chargement de la page
   document.addEventListener('DOMContentLoaded', displayTasks);
   
+// Delete task
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    saveTasks();
+    displayTasks();
+  }
+  
