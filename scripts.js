@@ -31,6 +31,12 @@ function displayTasks() {
     tasks.forEach((task, index) => {
       const li = document.createElement('li');
       li.setAttribute('data-index', index);
+      
+      // Mark a task as completed
+      if (task.completed) {
+        li.classList.add('completed');
+      }
+
       li.innerHTML = `
         <span>${task.text} - ${task.date}</span>
         <button class="delete-btn" onclick="deleteTask(${index})">×</button>
@@ -48,4 +54,19 @@ function deleteTask(index) {
     saveTasks();
     displayTasks();
   }
+  
+// Mark a task as completed
+function toggleCompletion(index) {
+    tasks[index].completed = !tasks[index].completed;
+    saveTasks();
+    displayTasks();
+  }
+  
+  taskList.addEventListener('click', (event) => {
+    const li = event.target.closest('li');
+    if (li) {
+      const index = li.dataset.index;
+      toggleCompletion(index);
+    }
+  });
   
