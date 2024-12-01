@@ -31,6 +31,11 @@ function displayTasks() {
     tasks.forEach((task, index) => {
       const li = document.createElement('li');
       li.setAttribute('data-index', index);
+      
+      // Mark a task as completed
+      if (task.completed) {
+        li.classList.add('completed');
+      }
 
       li.innerHTML = `
         <span>${task.text} - ${task.date}</span>
